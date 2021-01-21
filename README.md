@@ -9,12 +9,12 @@ See [help.txt](./src/help.txt).
 You need cargo (Rust build tool).
 
 ```sh
-cargo install --git https://github.com/vain0x/prepend
+cargo install --git https://github.com/vain0x/prepend --branch main
 ```
 
 ## Motivation
 
-Since pipe-like works concurrently, this doesn't work as you expected:
+Simple `cat`-way doesn't work:
 
 ```sh
 # a.txt has some data.
@@ -28,7 +28,7 @@ cat a.txt
 #=> hello
 ```
 
-Because `>a.txt` truncates all data from `a.txt` first. `cat` opens it and reads nothing.
+Because `>a.txt` truncates `a.txt` first, `cat` opens the file and reads nothing.
 
 ## With prepend command
 
