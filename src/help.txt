@@ -1,0 +1,26 @@
+{name} v{version}
+
+Edit a file to insert lines on head.
+
+USAGE:
+    prepend <FILE> [INPUT...]
+
+ARGS:
+    <FILE>      File to be updated
+    INPUT       Data to be prepended
+        -       Read from standard input
+
+OPTIONS:
+    -e, --escape        Interpret escape sequences such as \n in INPUT
+    -n, --no-newline    Don't put a newline after each INPUT
+
+    -h, --help          Show help
+    -V, --version       Show version
+
+EXAMPLE:
+    $ echo 'Bye' >foo.txt
+    $ prepend foo.txt Hello World
+    $ cat foo.txt
+    Hello
+    World
+    Bye

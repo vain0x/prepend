@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -eu
+
+cargo build
+
+PATH="$PWD/target/debug:$PATH"
+
+(
+    cd tests/data
+    ls *.sh | PATH="$PATH" xargs sh
+    git --no-pager diff --stat -- $PWD
+)
